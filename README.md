@@ -1,4 +1,4 @@
-# SSO_Counter
+# ArcGIS Online Single Sign-On (SSO) Counter
 
 **Added python file with IdP brand, hive/analysis server URL, and gis version number.  Full URLs will list next to the found IdP brand (e.g. Okta, ASDF/MS, Google, more). Outputs to a comma-seperated screen dump for easy move to spreadsheet.
 
