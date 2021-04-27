@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/SSOcounter-add_IdP.iml" filepath="$PROJECT_DIR$/.idea/SSOcounter-add_IdP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SSOcounter.iml" filepath="$PROJECT_DIR$/.idea/SSOcounter.iml" />
     </modules>
   </component>
 </project>
