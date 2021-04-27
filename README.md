@@ -1,5 +1,8 @@
 # SSO_Counter
 
+**Added python file with IdP detection and output.  Full URLs will list next to the found IdP type (e.g. Okta, ASDF/MS, Google, more).
+
+
 **Added April 25: Google Collaboratory version (file: SSOcounter-2-collaboratory.ipynb). Upload the CSV (with org names) directly into the running script and org with SSO output to screen, rather than file.
 
 
