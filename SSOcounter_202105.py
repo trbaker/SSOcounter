@@ -1,3 +1,5 @@
+# Spring 2021 Update
+
 # IMPORTS and VARS DEFINED
 import requests as r
 import pandas as pd
@@ -19,14 +21,17 @@ print('AGO with SSO enabled will list below in a comma-seperated dump. Total cou
 df = pd.read_csv('datain.csv')
 
 print(' ')
-print('count, url, SSO brand, analysis server, AGO version')
+print('count, url, SSO brand, analysis server')
 for index, row in df.iterrows():
     response = r.get("https://" + row[0] + ".maps.arcgis.com/sharing/rest/oauth2/authorize?client_id=arcgisonline&redirect_uri=https://fakeorg.maps.arcgis.com/home/postsignin.html&showSocialLogins=false&hideEnterpriseLogins=false&response_type=token")
     content = response.text
     startPositionInContent = content.find("idpName")
-    if startPositionInContent != -1:
+    #print(response.url)
+    #second half of condition below catches cases where only SSO is enabled - pushing user immediately to 3td party login.
+    if startPositionInContent != -1 or 'arcgis.com' not in response.url :
         print(counter, ',', row[0] + ".maps.arcgis.com,", sep="", end="")
         response2 = r.get("https://" + row[0] + ".maps.arcgis.com/sharing/rest/oauth2/saml/authorize?client_id=arcgisonline&redirect_uri=https://fakeorg.maps.arcgis.com/home/postsignin.html&showSocialLogins=false&hideEnterpriseLogins=false&response_type=token")
+        #get URL attached to SSO button after parsing URL
         if response2.history:
             workable = response2.url.split('/')[2] + '/' + response2.url.split('/')[3]
             # SSO detection logic
@@ -60,19 +65,18 @@ for index, row in df.iterrows():
             flyr_item = flyr_list[0]
             flyr = flyr_item.layers[0]
             hive_inferred = urlparse(flyr.url).netloc
-            print(hive_inferred,',', sep="", end="")
-            vers = str(gis.version).replace(',','.')
-            vers = vers.replace(" ", "")[1:4]
-            print(vers)
+            print(hive_inferred, sep="")
+            #vers = str(gis.version).replace(',','.')
+            #vers = vers.replace(" ", "")[1:4]
+            #print(vers)
         except:
-            print('Analysis server: NA',',', sep="", end="")
-            print('AGO version: NA')
+            print('Analysis server: NA', sep="")
         #general org counter
         counter = counter + 1
 
 print(' ')
 print(' -----  ')
-print(" AGO orgs with SSO enabled: ", counter)
+print(" AGO orgs with SSO enabled: ", counter-1)
 print('  - Microsoft: ', counter_MS)
 print('  - Google: ', counter_GOO)
 print('  - Okta: ', counter_OK)

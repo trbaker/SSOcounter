@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0886e7b-675e-4228-90c0-eebc90b9365d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SSOcounter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SSOcounter-add_IdP.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SSOcounter.py" beforeDir="false" afterPath="$PROJECT_DIR$/SSOcounter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datain.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datain.csv" afterDir="false" />
